@@ -1,0 +1,60 @@
+$(document).ready(function() {
+
+	$("#status").hide()
+	var colorsToPick = ["hairColor", "bodyColor", "pantsColor"];
+	var picking = "bodyColor";
+	var picker = new color.picker.Model(0,0,0);
+
+	picker.addWatch(document.getElementById('red'), 'red');
+	picker.addWatch(document.getElementById('green'), 'green');
+	picker.addWatch(document.getElementById('blue'), 'blue');
+	
+	picker.on('colorPicked', function(color){
+		window.avatar[picking] = color;
+		$('#avatar').html(window.avatar.render());
+
+		var gradientRange = picker.getColorRangeFor('red');
+		document.getElementById('red').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('green');
+		document.getElementById('green').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('blue');
+		document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+	});
+
+	$("#gender").on("click", function(el) {
+		window.avatar.toggleGender();
+		$('#avatar').html(window.avatar.render());
+	});
+
+	$("#glasses").on("click", function(el) {
+		window.avatar.glasses = !window.avatar.glasses;
+		$('#avatar').html(window.avatar.render());
+	});
+
+	$("#save").on("click", function(el) {
+		$("#setup").hide();
+		$("#status").show()
+	});
+
+	$("body").on("click", "svg path", function(el) {
+		switch(el.target.id) {
+
+			case "Broek" :
+				picking = "pantsColor";
+				break;
+			case "Haar" :
+				picking = "hairColor";
+				break;
+			case "Shirt" :
+				picking = "bodyColor";
+				break;
+		}
+	});
+
+	$("#avatar").on("click", function(el) {
+
+		//console.log(el);
+
+	});
+});
+

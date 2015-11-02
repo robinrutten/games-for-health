@@ -1,8 +1,44 @@
 body {
+	font: 14px arial;
 	background: #fff;
 }
 
+.idea {
+	width: 200px;
+    height: 200px;
+    top: -150px;
+    position: absolute;
+    right: -10px;
+    .idea-text {
+        position: absolute;
+	    top: 50%;
+	    height: 40px;
+	    padding: 20px 30px;
+	    margin-top: -55px;
+    }
+
+    .idea-image {
+	    width: 80px;
+	    height: 80px;
+	    top: 50%;
+	    right: 50%;
+	    position: absolute;
+	    margin-top: -40px;
+	    margin-right: -40px;
+    }
+
+    background: url("/img/spraakwolk.svg") no-repeat 100%;
+
+    transition: 300ms all;
+    opacity: 0;
+    &.visible {
+    	opacity: 1;
+    }
+}
+
+
 .top-bar {
+	z-index: 1000;
 	position: fixed;
 	top: 0;
 	height: 80px;
@@ -28,10 +64,30 @@ body {
 
 .avatar {
 	position: absolute;
+	z-index: 1000;
 	top: 50%;
 	left: 50%;
 	margin-left: -150px;
 	margin-top: -150px;
 	width: 300px;
 	height: 300px;
+}
+
+.wall {
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70vh;
+    background: #eee;
+}
+.floor {
+	position: fixed;
+    bottom: 0;
+    height: 30vh;
+    background: url('/img/floor.svg');
+    background-size: 120%;
+    background-position: center;
+    left: 0;
+    right: 0;
 }

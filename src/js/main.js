@@ -3,9 +3,12 @@ var Main = function() {
 	$('#avatar-svg').html(window.avatar.render());
 
 
-	window.showBubble = function(text) {
+	//showBubble('img/heart.svg')
+	//showBubble('img/bestek.svg')
+	window.showBubble = function(image) {
 		var $idea = $('.idea');
-		$('.idea-text', $idea).html(text);
+		$('.idea-image', $idea).html($('<img/>', {'src': image}));
+		//$('.idea-text', $idea).html(text);
 		$idea.addClass('visible');
 	}
 };

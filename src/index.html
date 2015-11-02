@@ -20,7 +20,7 @@
 - waardes (x aantal bollen)
 - earn points to uitgeven in winkel?-->
 
-<div class="top-bar">
+<div class="top-bar" id="setup">
 	<ul>
 		<li>
 			1000
@@ -28,21 +28,20 @@
 		<li>
 			1000
 		</li>
+
+		<input type="submit" value="Change Gender" id="gender" name="gender" >
+		<input type="submit" value="Toggle Glasses" id="glasses" name="glasses" >
+		<input type="range" id="red" name="red" min="0" max="255">
+		<input type="range" id="green" name="blue" min="0" max="255">
+		<input type="range" id="blue" name="blue" min="0" max="255">
+		<input type="submit" value="Save settings" id="save" name="save" >
+		
 	</ul>
 </div>
 
 <div id="avatar" class="avatar">
 
 </div>
-
-
-	<input type="range" id="red" name="red" min="0" max="255">
-	<input type="range" id="green" name="blue" min="0" max="255">
-	<input type="range" id="blue" name="blue" min="0" max="255">
-
-	<div id="color" style="width: 100px; height: 100px; display: block;"></div>
-
-	<input type="submit" id="save" />
 
 </body>
 </html>

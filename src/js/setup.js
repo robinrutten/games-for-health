@@ -1,11 +1,6 @@
-
-	
-
-
 $(document).ready(function() {
-
 	var colorsToPick = ["hairColor", "bodyColor", "pantsColor"];
-	var picking = "";
+	var picking = "bodyColor";
 	var picker = new color.picker.Model(0,0,0);
 
 	picker.addWatch(document.getElementById('red'), 'red');
@@ -13,7 +8,9 @@ $(document).ready(function() {
 	picker.addWatch(document.getElementById('blue'), 'blue');
 	
 	picker.on('colorPicked', function(color){
-		document.getElementById('color').style.backgroundColor = color;
+		window.avatar[picking] = color;
+		$('#avatar').html(window.avatar.render());
+
 		var gradientRange = picker.getColorRangeFor('red');
 		document.getElementById('red').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
 		gradientRange = picker.getColorRangeFor('green');
@@ -22,8 +19,21 @@ $(document).ready(function() {
 		document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
 	});
 
-	$("body").on("click", "svg path", function(el) {
+	$("#gender").on("click", function(el) {
+		window.avatar.toggleGender();
+		$('#avatar').html(window.avatar.render());
+	});
 
+	$("#glasses").on("click", function(el) {
+		window.avatar.glasses = !window.avatar.glasses;
+		$('#avatar').html(window.avatar.render());
+	});
+
+	$("#save").on("click", function(el) {
+		$("#setup").hide();
+	});
+
+	$("body").on("click", "svg path", function(el) {
 		switch(el.target.id) {
 
 			case "Broek" :
@@ -37,11 +47,7 @@ $(document).ready(function() {
 				break;
 
 		}
-		console.log(picking);
-
-
 	});
-
 
 	$("#avatar").on("click", function(el) {
 

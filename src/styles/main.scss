@@ -17,6 +17,18 @@ body {
 	    margin-top: -55px;
     }
 
+    .idea-image {
+	    width: 80px;
+	    height: 80px;
+	    top: 50%;
+	    right: 50%;
+	    position: absolute;
+	    margin-top: -40px;
+	    margin-right: -40px;
+    }
+
+    background: url("/img/spraakwolk.svg") no-repeat 100%;
+
     transition: 300ms all;
     opacity: 0;
     &.visible {
@@ -26,6 +38,7 @@ body {
 
 
 .top-bar {
+	z-index: 1000;
 	position: fixed;
 	top: 0;
 	height: 80px;
@@ -60,12 +73,21 @@ body {
 	height: 300px;
 }
 
+.wall {
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70vh;
+    background: #eee;
+}
 .floor {
 	position: fixed;
     bottom: 0;
     height: 30vh;
-    background: url('/img/floor.jpg');
-    background-size: cover;
+    background: url('/img/floor.svg');
+    background-size: 120%;
+    background-position: center;
     left: 0;
     right: 0;
 }

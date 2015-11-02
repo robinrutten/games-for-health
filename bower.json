@@ -1,16 +1,22 @@
 {
   "name": "games-for-health",
-  "version": "0.0.0",
-  "homepage": "https://github.com/robinrutten/games-for-health",
+  "description": "",
+  "main": "",
   "authors": [
-    "Robin Rutten <robinrutten@gmail.com>"
+    "Robin van Kaathoven <robin.vankaathoven@luminis.eu>"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/robinrutten/games-for-health",
+  "moduleType": [],
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "cois-color-picker": "~1.1.0",
+    "cois-observable": "~1.0.0"
+  }
 }

@@ -21,7 +21,19 @@ module.exports = function(grunt) {
 		    options: {
 		      livereload: false
 		    }
-		  }
+		  },
+	      js: {
+	        files: ['<%= src %>/js/{,*/}*.js'],
+	        options: {
+	          livereload: '<%= connect.server.options.livereload %>'
+	        }
+	      },
+	      css: {
+	        files: ['<%= dist %>/styles/{,*/}*.css'],
+	        options: {
+	          livereload: '<%= connect.server.options.livereload %>'
+	        }
+	      }
 		},
 
 		connect: {

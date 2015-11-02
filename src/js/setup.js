@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	$("#status").hide()
 	var colorsToPick = ["hairColor", "bodyColor", "pantsColor"];
 	var picking = "bodyColor";
 	var picker = new color.picker.Model(0,0,0);
@@ -31,6 +33,7 @@ $(document).ready(function() {
 
 	$("#save").on("click", function(el) {
 		$("#setup").hide();
+		$("#status").show()
 	});
 
 	$("body").on("click", "svg path", function(el) {
@@ -45,7 +48,6 @@ $(document).ready(function() {
 			case "Shirt" :
 				picking = "bodyColor";
 				break;
-
 		}
 	});
 

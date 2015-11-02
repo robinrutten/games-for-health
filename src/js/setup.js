@@ -1,9 +1,11 @@
 
-	var colorsToPick = ["hairColor", "bodyColor", "pantsColor"]
-
 	
 
 
+$(document).ready(function() {
+
+	var colorsToPick = ["hairColor", "bodyColor", "pantsColor"];
+	var picking = "";
 	var picker = new color.picker.Model(0,0,0);
 
 	picker.addWatch(document.getElementById('red'), 'red');
@@ -19,4 +21,32 @@
 		gradientRange = picker.getColorRangeFor('blue');
 		document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
 	});
+
+	$("body").on("click", "svg path", function(el) {
+
+		switch(el.target.id) {
+
+			case "Broek" :
+				picking = "pantsColor";
+				break;
+			case "Haar" :
+				picking = "hairColor";
+				break;
+			case "Shirt" :
+				picking = "bodyColor";
+				break;
+
+		}
+		console.log(picking);
+
+
+	});
+
+
+	$("#avatar").on("click", function(el) {
+
+		//console.log(el);
+
+	});
+});
 

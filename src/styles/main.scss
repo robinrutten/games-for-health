@@ -1,6 +1,29 @@
 body {
+	font: 14px arial;
 	background: #fff;
 }
+
+.idea {
+	width: 200px;
+    height: 200px;
+    top: -150px;
+    position: absolute;
+    right: -10px;
+    .idea-text {
+        position: absolute;
+	    top: 50%;
+	    height: 40px;
+	    padding: 20px 30px;
+	    margin-top: -55px;
+    }
+
+    transition: 300ms all;
+    opacity: 0;
+    &.visible {
+    	opacity: 1;
+    }
+}
+
 
 .top-bar {
 	position: fixed;
@@ -28,10 +51,21 @@ body {
 
 .avatar {
 	position: absolute;
+	z-index: 1000;
 	top: 50%;
 	left: 50%;
 	margin-left: -150px;
 	margin-top: -150px;
 	width: 300px;
 	height: 300px;
+}
+
+.floor {
+	position: fixed;
+    bottom: 0;
+    height: 30vh;
+    background: url('/img/floor.jpg');
+    background-size: cover;
+    left: 0;
+    right: 0;
 }

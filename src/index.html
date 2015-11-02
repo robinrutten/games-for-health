@@ -1,7 +1,14 @@
 <html>
 <head>
+
+	<script src="bower_components/cois-observable/cois-observable.min.js"></script>
+
+	<script src="bower_components/cois-color-picker/color.picker.min.js"></script>
+	
 	<script src="js/avatar.js"></script>
 	<script src="js/index.js"></script>
+
+
 </head>
 <body>
 
@@ -11,6 +18,32 @@
 - waardes (x aantal bollen)
 - earn points to uitgeven in winkel?-->
 
+
+<input type="range" id="red" name="red" min="0" max="255">
+<input type="range" id="green" name="blue" min="0" max="255">
+<input type="range" id="blue" name="blue" min="0" max="255">
+
+<div id="color" style="width: 100px; height: 100px; display: block;"></div>
+
+<script type="text/javascript">
+	
+	var picker = new color.picker.Model(0,0,0);
+
+	picker.addWatch(document.getElementById('red'), 'red');
+	picker.addWatch(document.getElementById('green'), 'green');
+	picker.addWatch(document.getElementById('blue'), 'blue');
+	
+	picker.on('colorPicked', function(color){
+		document.getElementById('color').style.backgroundColor = color;
+		var gradientRange = picker.getColorRangeFor('red');
+		document.getElementById('red').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('green');
+		document.getElementById('green').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('blue');
+		document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+	});
+
+</script>
 
 </body>
 </html>

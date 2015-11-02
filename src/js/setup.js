@@ -34,6 +34,8 @@ $(document).ready(function() {
 	$("#save").on("click", function(el) {
 		$("#setup").hide();
 		$("#status").show()
+		window.avatar.statusBar = $("#status");
+		$('#avatar').html(window.avatar.render());
 	});
 
 	$("body").on("click", "svg path", function(el) {

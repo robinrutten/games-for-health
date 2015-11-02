@@ -6,6 +6,10 @@ var Avatar = function(name, gender, hairColor, bodyColor, pantsColor) {
 	this.bodyColor = bodyColor;
 	this.pantsColor = pantsColor;
 	this.glasses = true;
+
+	this.health = new Health();
+
+	this.statusBar = null;
 };
 
 Avatar.prototype = {
@@ -19,7 +23,18 @@ Avatar.prototype = {
 		
 	},
 
+	renderStatus : function() {
+console.log("rendering1");
+		if(this.statusBar) {
+			console.log("rendering2");
+			this.health.render(this.statusBar);
+		}
+	},
+
+
 	render: function() {
+		this.renderStatus();
+
 		if(this.gender === 'female') {
 			return this._renderFemale();
 		}
@@ -60,5 +75,7 @@ Avatar.prototype = {
 		svg += '</svg>';
 		return svg;
 	}
+
+
 };
 

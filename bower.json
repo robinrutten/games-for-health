@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "cois-color-picker": "~1.1.0",
-    "cois-observable": "~1.0.0"
+    "cois-observable": "~1.0.0",
+    "jquery": "~2.1.4"
   }
 }

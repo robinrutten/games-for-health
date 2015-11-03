@@ -139,3 +139,31 @@ input[type=button] {
 	border: 0;
 	padding: 5px 10px;
 }
+
+
+.dialog {
+	position: absolute;
+    z-index: 10000;
+    background: rgba(255,255,255,0.98);
+    top: 20px;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.dialog-title {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+	background: #ccc;
+}
+.dialog-body {
+	position: absolute;
+	top: 40px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow: auto;
+}

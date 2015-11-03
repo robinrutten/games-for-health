@@ -87,5 +87,9 @@ var Main = function() {
 		$('.idea-image', $idea).html($('<img/>', {'src': image}));
 		//$('.idea-text', $idea).html(text);
 		$idea.addClass('visible');
+
+		setTimeout(function() {
+			$idea.removeClass('visible');
+		}, 3000);
 	}
 };

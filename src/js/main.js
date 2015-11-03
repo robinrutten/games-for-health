@@ -6,6 +6,24 @@ var Main = function() {
 	var game = window.game = new Game();
 	game.addAvatar(avatar);
 
+	/**
+	 * change of action points
+	 */
+	$('body').on('actionPointsChange', function(e, points) { 
+		if(points >= 20) {
+			$('#actions').addClass('visible');
+		} else {
+			$('#actions').removeClass('visible');
+		}
+	});
+
+	/**
+	 * init points
+	 */
+	window.actionPoints = new ActionPoints($('#points'));
+	setInterval(function() {
+		window.actionPoints.increase(1);
+	}, window.actionPoints.increaseInterval);
 	var animator = new Animator(avatar);
 
 

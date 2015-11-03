@@ -180,6 +180,12 @@ input[type=button] {
     z-index: 999;
     left: 20px;
 
+    transition: 300ms all;
+    opacity: 0;
+    &.visible {
+    	opacity: 1;
+    }
+
     button {
     	background: transparent;
     	border: 0;

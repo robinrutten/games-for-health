@@ -36,15 +36,33 @@ var Main = function() {
 	$('body').on('click', '.js-settings-toggle', function(e) {
 		$('#settings').toggleClass('visible');
 	});
-
+	var currentQ = 1;
 	$('body').on('click', '.js-action', function(e) {
 		var $action = $(this), 
 			type = $action.attr('data-type');
 		
 		if(type == 'hearts') {
-			window.game.increaseHearts(window.avatar);
+			$(".dialog .dialog-title").html($("#vraag"+ currentQ + "Header").html());
+			$(".dialog .dialog-body").html($("#vraag" + currentQ).html());
 			$(".dialog").show();
-			console.log("a");
+			
+			$(".dialog li").on("click", function(el) {
+				window.avatar.rockeach.score($(this).attr('data-rokeach'));
+				
+					console.log($(this).attr('data-func'));
+					//console.log("$('.avatar').addClass('bungeejumping')");
+					eval($(this).attr('data-func'));
+					//eval("$('.avatar').addClass('bungeejumping')");
+				
+				$(".dialog dialog-title").html("");
+				$(".dialog dialog-body").html("");
+				$(".dialog").hide();
+			});
+
+			currentQ +=1;
+			if(currentQ == 4) {
+				currentQ = 1;
+			}
 			window.avatar.render();
 		}
 		if(type == 'food') {

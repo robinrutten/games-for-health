@@ -16,7 +16,7 @@ var Avatar = function(name, gender, hairColor, bodyColor, pantsColor) {
 };
 
 Avatar.prototype = {
-
+	
 	toggleGender : function() {
 		if(this.gender === 'female') {
 			this.gender = 'male';

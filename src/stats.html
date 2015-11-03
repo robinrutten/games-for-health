@@ -1,0 +1,38 @@
+<html>
+<head>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+
+	<script src="js/Rockeach.js"></script>
+</head>
+<body>
+
+<div class="stats">
+	<ul>
+
+	</ul>
+</div>
+
+</body>
+
+<script type="text/javascript">
+ 	var values = [];
+	try {
+		values = JSON.parse(localStorage.getItem('Rockeach')) || [];
+	} catch (e) {
+		values = [];
+		for (var i in Rockeach.names) {
+			values.push(new RockeachValue(Rockeach.names[i]))	
+		}
+	}
+
+	values.sort(function(a, b){return b.value-a.value});
+
+	for (var i in values) {
+		var item = $("<li>");
+		$(item).html(values[i].name + " " + values[i].value)
+		$(".stats ul").append(item);
+	}
+
+</script>
+
+</html>

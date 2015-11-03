@@ -19,6 +19,8 @@ var Main = function() {
 		
 		if(type == 'hearts') {
 			window.game.increaseHearts(window.avatar);
+			$(".dialog").show();
+			console.log("a");
 			window.avatar.render();
 		}
 		if(type == 'food') {
@@ -31,8 +33,8 @@ var Main = function() {
 		}
 	});
 
-	//showBubble('img/heart.svg')
-	//showBubble('img/bestek.svg')
+	//showBubble('img/heart.svg');
+	//showBubble('img/bestek.svg');
 	window.showBubble = function(image) {
 		var $idea = $('.idea');
 		$('.idea-image', $idea).html($('<img/>', {'src': image}));

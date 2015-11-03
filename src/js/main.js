@@ -1,5 +1,6 @@
 var Main = function() {
-	var avatar = window.avatar = new Avatar('Me', 'female', 'red', '#fff', '#0AA');
+	var avatar = window.avatar = new Avatar('Me', 'female', '#710200', '#ddd', '#003399');
+	avatar.statusBar = $("#status");
 	$('#avatar-svg').html(window.avatar.render());
 
 	var game = window.game = new Game();

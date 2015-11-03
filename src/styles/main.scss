@@ -3,6 +3,7 @@
 body {
 	font: 14px arial;
 	background: #fff;
+	overflow: hidden;
 }
 
 .idea {
@@ -57,11 +58,15 @@ body {
 }
 
 .top-bar ul li {
-	border-radius: 5px;
-	border: 2px solid #000;
-	padding: 10px;
-	float: left;
-	margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 9px;
+    float: left;
+    margin-right: 10px;
+    font-size: 18px;
+    .typcn {
+    	font-size: 24px;
+    }
 }
 
 .avatar {
@@ -101,12 +106,13 @@ body {
 	padding: 20px;
 	height: 100px;
 	bottom: 0;
+	transform: translate3d(0, 140px, 0);
 	right: 0;
 	left: 0;
-	background: rgba(0,0,0,0.5);
-	display: none;
+	background: rgba(51,64,189,0.9);
+	transition: 300ms all;
 	&.visible {
-		display: block;
+		transform: translate3d(0, 0, 0);
 	}
 	.settings-body {
 		padding: 10px 0;
@@ -166,4 +172,24 @@ input[type=button] {
 	right: 0;
 	left: 0;
 	overflow: auto;
+}
+
+.actions {
+	position: absolute;
+    bottom: 20px;
+    z-index: 999;
+    left: 20px;
+
+    button {
+    	background: transparent;
+    	border: 0;
+    	font-size: 60px;
+    	color: #fff;
+    	text-shadow: 0 0 5px #000;
+    	outline: none;
+    	cursor: pointer;
+    	&:hover {
+    		text-shadow: 0 0 15px #fff;
+    	}
+    }
 }

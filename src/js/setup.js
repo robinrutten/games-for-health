@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("#status").hide()
+	$("#status").hide();
 	var colorsToPick = ["hairColor", "bodyColor", "pantsColor"];
 	var picking = "bodyColor";
 	var picker = new color.picker.Model(0,0,0);
@@ -28,13 +28,6 @@ $(document).ready(function() {
 
 	$("#glasses").on("click", function(el) {
 		window.avatar.glasses = !window.avatar.glasses;
-		$('#avatar-svg').html(window.avatar.render());
-	});
-
-	$("#save").on("click", function(el) {
-		$("#setup").hide();
-		$("#status").show()
-		window.avatar.statusBar = $("#status");
 		$('#avatar-svg').html(window.avatar.render());
 	});
 

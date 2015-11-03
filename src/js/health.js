@@ -1,7 +1,7 @@
 var Health = function() { 
-	this.hearts = 5;
-	this.food = 5;
-	this.happy = 5;
+	this.hearts = 20;
+	this.food = 20;
+	this.happy = 20;
 
 };
 

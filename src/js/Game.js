@@ -1,9 +1,9 @@
 var Rules = {}
 Rules.health= {}
 Rules.health.feed = function() {
-	this.food -= 5;
-	if(this.food < 0) {
-		this.food = 0;
+	this.food += 5;
+	if(this.food > 20) {
+		this.food = 20;
 	}
 }
 
@@ -16,7 +16,9 @@ Game.prototype.addAvatar = function(avatar) {
 	this.avatars.push(avatar);
 	var _self = this;
 	window.setInterval(function() {
-		_self.avatars[0].health.food++;
+		if(_self.avatars[0].health.food > 0) {
+			_self.avatars[0].health.food--;
+		}
 		_self.avatars[0].render();
 	}, 5000);
 };

@@ -9,7 +9,7 @@ var Main = function() {
 
 		setTimeout(function() {
 			$idea.removeClass('visible');
-		}, 5000);
+		}, 15000);
 	}
 	window.hideBubble = function(image) {
 		var $idea = $('.idea');
@@ -30,6 +30,7 @@ var Main = function() {
 	}
 
 	var restartTimeout = function() {
+		console.log('restart timeout');
 		window.hideBubble();
 		if(window.noActionTimeout) {
 			clearTimeout(window.noActionTimeout);
@@ -75,6 +76,8 @@ var Main = function() {
 	$('body').on('click', '.js-action', function(e) {
 		var $action = $(this), 
 			type = $action.attr('data-type');
+
+		restartTimeout();
 		
 		if(type == 'hearts') {
 			$(".dialog .dialog-title").html($("#vraag"+ currentQ + "Header").html());
@@ -99,6 +102,7 @@ var Main = function() {
 				currentQ = 1;
 			}
 			showBubble('img/heart.svg');
+			window.game.increaseHearts(window.avatar);
 			window.avatar.render();
 		}
 		if(type == 'food') {
@@ -110,10 +114,9 @@ var Main = function() {
 			window.avatar.render();
 		}
 		try {
-		window.actionPoints.decrease(10);
+			window.actionPoints.decrease(10);
 		} catch(ex) {
 
 		}
-		restartTimeout();
 	});
 };

@@ -4,6 +4,9 @@ var Main = function() {
 
 	var game = window.game = new Game();
 	game.addAvatar(avatar);
+
+	var animator = new Animator(avatar);
+
 	//showBubble('img/heart.svg')
 	//showBubble('img/bestek.svg')
 	window.showBubble = function(image) {

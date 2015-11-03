@@ -1,5 +1,6 @@
 var Rules = {}
-Rules.feed = function() {
+Rules.health= {}
+Rules.health.feed = function() {
 	this.food -= 5;
 	if(this.food < 0) {
 		this.food = 0;
@@ -21,5 +22,5 @@ Game.prototype.addAvatar = function(avatar) {
 };
 
 Game.prototype.feed = function(avatar) {
-	Rules.feed.apply(avatar.health);
+	Rules.health.feed.apply(avatar.health);
 }

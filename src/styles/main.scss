@@ -6,7 +6,128 @@ body {
 	overflow: hidden;
 }
 
+.asset {
+	display: none;
+}
+.asset.surfboard {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 294px;
+    bottom: 20%;
+    right: 20%;
+    background: url("../img/surfboard.svg");
+}
+.asset.sun {
+	position: absolute;
+    z-index: 1;
+    width: 150px;
+    height: 143px;
+    top: 18px;
+    right: 20px;
+    background: url("../img/sun.svg");
+}
+
+.asset.sunscreen {
+    position: absolute;
+    z-index: 1;
+    width: 257px;
+    height: 254px;
+    bottom: 15%;
+    left: 5%;
+    background: url("../img/sunscreen.svg");
+}
+
+.asset.hammock {
+    position: absolute;
+    z-index: 1;
+    left: 15%;
+    background: url("../img/hammock.svg");
+    right: 15%;
+    background-size: contain;
+    top: 5%;
+    bottom: 20%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.asset.turkeytable {
+    position: absolute;
+    z-index: 1000;
+    left: 15%;
+    background: url("../img/turkeytable.svg");
+    right: 15%;
+    background-size: contain;
+    top: 45%;
+    bottom: 10%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.asset.bank {
+    position: absolute;
+    z-index: 1;
+    width: 350px;
+    height: 158px;
+    bottom: 25%;
+    left: 50%;
+    background: url("../img/couch.svg");
+    margin-left: -175px;
+}
+
+.asset.tv {
+    position: absolute;
+    width: 500px;
+    height: 311px;
+    bottom: -10%;
+    left: 50%;
+    background: url("../img/tv.svg");
+    margin-left: -250px;
+    z-index: 1000;
+    background-position: center;
+}
+
+
+.asset.christmastree {
+    position: absolute;
+    z-index: 1;
+    width: 257px;
+    height: 354px;
+    bottom: 25%;
+    right: 5%;
+    background: url("../img/christmastree.svg")
+}
+
+.scene-christmas {
+	.asset.turkeytable {
+		display: inline-block;
+	}
+	.asset.christmastree {
+		display: inline-block;
+	}
+	.wall {
+		background-color: #81161C;
+	}
+}
+
+.scene-beach {
+	.asset.surfboard, .asset.sun, .asset.sunscreen {
+		display: inline-block;
+	}
+}
+.scene-park {
+	.asset.hammock {
+		display: inline-block;
+	}
+}
+.scene-tv {
+	.asset.tv, .asset.bank {
+		display: inline-block;
+	}
+}
+
 .idea {
+	z-index: 999;
 	width: 200px;
     height: 200px;
     top: -150px;
@@ -59,13 +180,31 @@ body {
 
 .top-bar ul li {
     border-radius: 5px;
-    border: 1px solid #000;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
     padding: 9px;
     float: left;
     margin-right: 10px;
     font-size: 18px;
     .typcn {
     	font-size: 24px;
+    }
+
+    background: #fff;
+    transition: 300ms all;
+    &.score-5 {
+    	background: #39B54A;
+    }
+    &.score-4 {
+    	background: #8CC63F;
+    }
+    &.score-3 {
+    	background: #FCEE21;
+    }
+    &.score-2 {
+    	background: #F15A24;
+    }
+    &.score-1 {
+    	background: #C1272D;
     }
 }
 
@@ -78,8 +217,9 @@ body {
 	margin-top: -150px;
 	width: 300px;
 	height: 300px;
-	box-shadow: 0 55px 45px -45px;
+	box-shadow: 0 55px 101px -55px rgba(0,0,0,0.25);
 }
+
 
 .wall {
 	position: fixed;
@@ -88,20 +228,32 @@ body {
     left: 0;
     height: 70vh;
     background: #eee;
+
+    .scene-beach &, .scene-park & {
+    	background: #cff5ff;
+    }
 }
 .floor {
 	position: fixed;
     bottom: 0;
     height: 30vh;
-    background: url('/img/floor.svg');
+    background: #8c6239;
     background-size: 120%;
     background-position: center;
     left: 0;
     right: 0;
+
+     .scene-beach & {
+     	background: #E9D894;
+     }
+
+     .scene-park & {
+     	background: #8CC63F;
+     }
 }
 
 .settings {
-	z-index: 1000;
+	z-index: 1001;
 	position: absolute;
 	padding: 20px;
 	height: 100px;

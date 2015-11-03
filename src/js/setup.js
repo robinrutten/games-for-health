@@ -38,6 +38,11 @@ $(document).ready(function() {
 		$('#avatar').html(window.avatar.render());
 	});
 
+	$("#feed input").on("click", function(el) {
+		window.game.feed(window.avatar);
+		window.avatar.render();
+	});
+
 	$("body").on("click", "svg path", function(el) {
 		switch(el.target.id) {
 

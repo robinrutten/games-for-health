@@ -10,6 +10,7 @@ var Avatar = function(name, gender, hairColor, bodyColor, pantsColor) {
 	this.health = new Health();
 
 	this.statusBar = null;
+	this.toggleGender();
 };
 
 Avatar.prototype = {
@@ -20,7 +21,11 @@ Avatar.prototype = {
 		} else {
 			this.gender = 'female';
 		}
-		
+
+		if(this.gender === 'female') {
+			this.svg =  this._renderFemale();
+		}
+		this.svg = this._renderMale();
 	},
 
 	renderStatus : function() {
@@ -29,14 +34,10 @@ Avatar.prototype = {
 		}
 	},
 
-
 	render: function() {
 		this.renderStatus();
 
-		if(this.gender === 'female') {
-			return this._renderFemale();
-		}
-		return this._renderMale();
+		return this.svg;
 	},
 
 	_renderMale: function() {

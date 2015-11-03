@@ -1,7 +1,11 @@
 var Main = function() {
-	window.avatar = new Avatar('Me', 'female', 'red', '#fff', '#0AA');
+	var avatar = window.avatar = new Avatar('Me', 'female', 'red', '#fff', '#0AA');
 	$('#avatar-svg').html(window.avatar.render());
 
+	var game = window.game = new Game();
+	game.addAvatar(avatar);
+
+	var animator = new Animator(avatar);
 
 	//showBubble('img/heart.svg')
 	//showBubble('img/bestek.svg')

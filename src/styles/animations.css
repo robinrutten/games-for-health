@@ -2,17 +2,65 @@
   0% {
     transform: translateY(0px);
   }
-  34% {
+  3% {
     transform: translateY(-1px);
   }
-  37% {
+  4% {
     transform: translateY(-3px);
   }
+  5% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  23% {
+    transform: translateY(1px);
+  }
+  24% {
+    transform: translateY(3px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  
   100% {
     transform: translateY(0px);
   }
 }
 
 .eyes {
-    animation: popup 2s 1.5s ease infinite;
+    animation: popup 20s 1.5s ease infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  5% {
+    transform: translateY(-1px);
+  }
+  7% {
+    transform: translateY(-3px);
+  }
+  9% {
+    transform: translateY(0px);
+  }
+  
+  40% {
+    transform: translateX(0px);
+  }
+  42% {
+    transform: translateX(6px);
+  }
+  70% {
+    transform: translateX(10px);
+  }
+  85% {
+    transform: translateX(-7px);
+  }
+}
+
+#Layer_1, #Layer_2 {
+  animation: jump 5s 1.5s ease-in-out infinite;
 }

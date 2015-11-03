@@ -406,15 +406,18 @@ input[type=button] {
 	font-size: 1.75em;
 
 }
+
 .dialog-body ul.opties {
 	margin: 0;
-	display: block;
+	
     list-style-type: disc;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     -webkit-padding-start: 0px;
+    display: table-row;
+	
 }
 
 .opties li {
@@ -427,7 +430,8 @@ input[type=button] {
 	margin-top: 1%;
 	margin-bottom: 1%;
 	
-	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
 	width: 44%;
 	height: 90%;
 	border-radius: 15px;

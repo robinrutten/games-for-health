@@ -174,11 +174,35 @@ input[type=button] {
 	overflow: auto;
 }
 
+.points {
+	.icon-positive, .icon-negative {
+		display: none;
+	}
+	&.positive {
+		.icon-positive {
+			display: inline-block;
+			color: lightgreen;
+		}
+	}
+	&.negative {
+		.icon-negative {
+			display: inline-block;
+			color: red;
+		}
+	}
+}
+
 .actions {
 	position: absolute;
     bottom: 20px;
     z-index: 999;
     left: 20px;
+
+    transition: 300ms all;
+    opacity: 0;
+    &.visible {
+    	opacity: 1;
+    }
 
     button {
     	background: transparent;

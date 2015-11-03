@@ -11,6 +11,7 @@
 
 	<script src="js/main.js"></script>
 	<script src="js/setup.js"></script>
+	<script src="js/ActionPoints.js"></script>
 	<script src="js/Rockeach.js"></script>
 	<script src="js/Game.js"></script>
 	<script src="js/Animator.js"></script>
@@ -54,6 +55,13 @@
 			<span id="happy"></span>
 		</li>
 
+		<li style="float: right" class="points" id="points-container">
+			<span class="typcn typcn-star"></span>
+			<span id="points">100</span>
+			<span class="icon-positive typcn typcn-arrow-up-thick"></span>
+			<span class="icon-negative typcn typcn-arrow-down-thick"></span>
+		</li>
+
 		
 		<span class="typcn typcn-coffee"></span>
 		<span class="typcn typcn-wine"></span>
@@ -68,8 +76,8 @@
 	
 </div>
 
-<div class="actions">
-	<button class="js-action" data-type="heart"><span class="typcn typcn-heart"></span></button>
+<div class="actions" id="actions">
+	<button class="js-action" data-type="hearts"><span class="typcn typcn-heart"></span></button>
 	<button class="js-action" data-type="food"><span class="typcn typcn-coffee"></span></button>
 	<button class="js-action" data-type="happy"><span class="typcn typcn-thumbs-up"></span></button>
 </div>

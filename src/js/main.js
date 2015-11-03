@@ -6,6 +6,30 @@ var Main = function() {
 	var game = window.game = new Game();
 	game.addAvatar(avatar);
 
+	/**
+	 * change of action points
+	 */
+	$('body').on('actionPointsChange', function(e, points, type) { 
+		$('#points-container').removeClass('positive negative');
+		if(type == 'positive') {
+			$('#points-container').addClass('positive');
+		} else {
+			$('#points-container').addClass('negative');
+		}
+		if(points >= 20) {
+			$('#actions').addClass('visible');
+		} else {
+			$('#actions').removeClass('visible');
+		}
+	});
+
+	/**
+	 * init points
+	 */
+	window.actionPoints = new ActionPoints($('#points'));
+	setInterval(function() {
+		window.actionPoints.increase(1);
+	}, window.actionPoints.increaseInterval);
 	var animator = new Animator(avatar);
 
 
@@ -31,6 +55,7 @@ var Main = function() {
 			window.game.increaseHappy(window.avatar);
 			window.avatar.render();
 		}
+		window.actionPoints.decrease(20);
 	});
 
 	//showBubble('img/heart.svg');

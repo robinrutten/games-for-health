@@ -7,6 +7,6 @@ var Animator = function(avatar) {
 }
 
 Animator.animate = function() {
-
+	
 }
 

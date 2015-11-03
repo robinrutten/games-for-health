@@ -217,3 +217,46 @@ input[type=button] {
     	}
     }
 }
+
+.dialog-title {
+	font-size: 1.75em;
+
+}
+.dialog-body ul.opties {
+	margin: 0;
+	display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+.opties li {
+	&:hover {
+		background-color: #dddddd;
+	}
+	position:relative;
+	float: left;
+	margin-left: 1%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	
+	display: inline-block;
+	width: 44%;
+	height: 90%;
+	border-radius: 15px;
+	
+	background-color: #eee;
+	padding: 2%;
+	font-size: 2em;
+	.typcn {
+		
+		height: 200px;
+		margin-left: auto;
+		width: 100%;
+		font-size: 5em;
+	}
+}
+

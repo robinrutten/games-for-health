@@ -7,6 +7,11 @@ var Main = function() {
 
 	var animator = new Animator(avatar);
 
+
+	$('body').on('click', '.js-settings-toggle', function(e) {
+		$('#settings').toggleClass('visible');
+	});
+
 	//showBubble('img/heart.svg')
 	//showBubble('img/bestek.svg')
 	window.showBubble = function(image) {

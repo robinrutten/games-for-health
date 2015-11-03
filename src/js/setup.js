@@ -11,7 +11,7 @@ $(document).ready(function() {
 	
 	picker.on('colorPicked', function(color){
 		window.avatar[picking] = color;
-		$('#avatar').html(window.avatar.render());
+		$('#avatar-svg').html(window.avatar.render());
 
 		var gradientRange = picker.getColorRangeFor('red');
 		document.getElementById('red').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
@@ -23,19 +23,19 @@ $(document).ready(function() {
 
 	$("#gender").on("click", function(el) {
 		window.avatar.toggleGender();
-		$('#avatar').html(window.avatar.render());
+		$('#avatar-svg').html(window.avatar.render());
 	});
 
 	$("#glasses").on("click", function(el) {
 		window.avatar.glasses = !window.avatar.glasses;
-		$('#avatar').html(window.avatar.render());
+		$('#avatar-svg').html(window.avatar.render());
 	});
 
 	$("#save").on("click", function(el) {
 		$("#setup").hide();
 		$("#status").show()
 		window.avatar.statusBar = $("#status");
-		$('#avatar').html(window.avatar.render());
+		$('#avatar-svg').html(window.avatar.render());
 	});
 
 	$("#feed input").on("click", function(el) {
@@ -58,7 +58,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#avatar").on("click", function(el) {
+	$("#avatar-svg").on("click", function(el) {
 
 		//console.log(el);
 

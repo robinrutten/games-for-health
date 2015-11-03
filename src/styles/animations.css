@@ -64,8 +64,39 @@
   }
 }
 
-#Layer_1, #Layer_2 {
+.avatar #Layer_1, #Layer_2 {
   animation: jump 5s 1.5s ease-in-out infinite;
-  
+}
+
+@keyframes bungee {
+  0% {
+    transform: rotateZ(-15deg) translateY(-500px);
+
+
+  }
+
+  25% {
+    transform: rotateZ(15deg) translateY(100px);
+
+  }
+
+
+  50% {
+    transform: rotateZ(0deg) translateY(-160px);
+
+  }
+  75% {
+    transform: rotateZ(-15deg) translateY(60px);
+
+  }
+  100% {
+    transform: rotateZ(0deg) translateY(0px);
+
+  }
+}
+
+.bungeejumping {
+  animation: bungee 2s 0s ease-in-out 1;
+  box-shadow: none;
 }
 

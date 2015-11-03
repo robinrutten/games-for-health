@@ -16,7 +16,7 @@ var Main = function() {
 		} else {
 			$('#points-container').addClass('negative');
 		}
-		if(points >= 20) {
+		if(points >= 10) {
 			$('#actions').addClass('visible');
 		} else {
 			$('#actions').removeClass('visible');
@@ -53,7 +53,11 @@ var Main = function() {
 			window.game.increaseHappy(window.avatar);
 			window.avatar.render();
 		}
-		window.actionPoints.decrease(20);
+		try {
+		window.actionPoints.decrease(10);
+		} catch(ex) {
+
+		}
 	});
 
 	//showBubble('img/heart.svg')

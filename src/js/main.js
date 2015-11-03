@@ -1,10 +1,45 @@
 var Main = function() {
+	//showBubble('img/heart.svg');
+	//showBubble('img/bestek.svg');
+	window.showBubble = function(image) {
+		var $idea = $('.idea');
+		$('.idea-image', $idea).html($('<img/>', {'src': image}));
+		//$('.idea-text', $idea).html(text);
+		$idea.addClass('visible');
+
+		setTimeout(function() {
+			$idea.removeClass('visible');
+		}, 5000);
+	}
+	window.hideBubble = function(image) {
+		var $idea = $('.idea');
+		$idea.removeClass('visible');
+	};
+
 	var avatar = window.avatar = new Avatar('Me', 'female', '#710200', '#990000', '#003399');
 	avatar.statusBar = $("#status");
 	$('#avatar-svg').html(window.avatar.render());
 
 	var game = window.game = new Game();
 	game.addAvatar(avatar);
+
+	window.noActionTimeout;
+
+	var noActionFunction = function() {
+		window.showBubble('img/sleep.svg');
+	}
+
+	var restartTimeout = function() {
+		window.hideBubble();
+		if(window.noActionTimeout) {
+			clearTimeout(window.noActionTimeout);
+		}
+		window.noActionTimeout = setTimeout(function() {
+			noActionFunction();
+		}, 4000);
+	};
+
+	restartTimeout();
 
 	/**
 	 * change of action points
@@ -79,18 +114,6 @@ var Main = function() {
 		} catch(ex) {
 
 		}
+		restartTimeout();
 	});
-
-	//showBubble('img/heart.svg');
-	//showBubble('img/bestek.svg');
-	window.showBubble = function(image) {
-		var $idea = $('.idea');
-		$('.idea-image', $idea).html($('<img/>', {'src': image}));
-		//$('.idea-text', $idea).html(text);
-		$idea.addClass('visible');
-
-		setTimeout(function() {
-			$idea.removeClass('visible');
-		}, 3000);
-	}
 };

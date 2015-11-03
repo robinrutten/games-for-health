@@ -28,6 +28,16 @@ body {
     background: url("../img/sun.svg");
 }
 
+.asset.phone {
+    position: absolute;
+    z-index: 1001;
+    width: 48px;
+    height: 48px;
+    bottom: 60%;
+    left: 40%;
+    background: url("../img/phone.svg");
+}
+
 .asset.sunscreen {
     position: absolute;
     z-index: 1;
@@ -87,6 +97,17 @@ body {
     background-position: center;
 }
 
+.asset.family {
+    position: absolute;
+    right: 5%;
+    background: url("../img/family.svg");
+    z-index: 1;
+    background-position: center;
+    left: 5%;
+    height: 255px;
+    bottom: 25%;
+    background-repeat: no-repeat;
+}
 
 .asset.christmastree {
     position: absolute;
@@ -103,6 +124,9 @@ body {
 		display: inline-block;
 	}
 	.asset.christmastree {
+		display: inline-block;
+	}
+	.asset.family {
 		display: inline-block;
 	}
 	.wall {
@@ -122,6 +146,12 @@ body {
 }
 .scene-tv {
 	.asset.tv, .asset.bank {
+		display: inline-block;
+	}
+}
+
+.scene-call {
+	.asset.phone {
 		display: inline-block;
 	}
 }
@@ -228,6 +258,8 @@ body {
     left: 0;
     height: 70vh;
     background: #eee;
+
+    transition: all 300ms;
 
     .scene-beach &, .scene-park & {
     	background: #cff5ff;

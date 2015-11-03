@@ -24,6 +24,7 @@ Avatar.prototype = {
 	},
 
 	renderStatus : function() {
+		
 		if(this.statusBar) {
 			this.health.render(this.statusBar);
 		}

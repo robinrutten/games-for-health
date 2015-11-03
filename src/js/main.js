@@ -49,20 +49,21 @@ var Main = function() {
 			$(".dialog li").on("click", function(el) {
 				window.avatar.rockeach.score($(this).attr('data-rokeach'));
 				
-					console.log($(this).attr('data-func'));
-					//console.log("$('.avatar').addClass('bungeejumping')");
-					eval($(this).attr('data-func'));
-					//eval("$('.avatar').addClass('bungeejumping')");
-				
+				eval($(this).attr('data-func'));
+					
 				$(".dialog dialog-title").html("");
 				$(".dialog dialog-body").html("");
 				$(".dialog").hide();
+				
+				showBubble('img/heart.svg');
+			
 			});
 
 			currentQ +=1;
 			if(currentQ == 4) {
 				currentQ = 1;
 			}
+			showBubble('img/heart.svg');
 			window.avatar.render();
 		}
 		if(type == 'food') {

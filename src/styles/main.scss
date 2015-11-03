@@ -64,6 +64,9 @@ body {
     float: left;
     margin-right: 10px;
     font-size: 18px;
+    .typcn {
+    	font-size: 24px;
+    }
 }
 
 .avatar {
@@ -106,7 +109,7 @@ body {
 	transform: translate3d(0, 140px, 0);
 	right: 0;
 	left: 0;
-	background: rgba(0,0,0,0.5);
+	background: rgba(51,64,189,0.9);
 	transition: 300ms all;
 	&.visible {
 		transform: translate3d(0, 0, 0);
@@ -169,4 +172,24 @@ input[type=button] {
 	right: 0;
 	left: 0;
 	overflow: auto;
+}
+
+.actions {
+	position: absolute;
+    bottom: 20px;
+    z-index: 999;
+    left: 20px;
+
+    button {
+    	background: transparent;
+    	border: 0;
+    	font-size: 60px;
+    	color: #fff;
+    	text-shadow: 0 0 5px #000;
+    	outline: none;
+    	cursor: pointer;
+    	&:hover {
+    		text-shadow: 0 0 15px #fff;
+    	}
+    }
 }

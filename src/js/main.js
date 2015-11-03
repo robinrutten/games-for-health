@@ -49,14 +49,13 @@ var Main = function() {
 			$(".dialog li").on("click", function(el) {
 				window.avatar.rockeach.score($(this).attr('data-rokeach'));
 				
-					console.log($(this).attr('data-func'));
-					//console.log("$('.avatar').addClass('bungeejumping')");
 					eval($(this).attr('data-func'));
-					//eval("$('.avatar').addClass('bungeejumping')");
-				
+					
 				$(".dialog dialog-title").html("");
 				$(".dialog dialog-body").html("");
 				$(".dialog").hide();
+				window.game.increaseHearts(window.avatar);
+			
 			});
 
 			currentQ +=1;

@@ -46,11 +46,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".avatar").on("click", function(el) {
-		$(el.currentTarget).addClass("bungeejumping");
-	});
-
-	$(".avatar").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e){ $(e.currentTarget).removeClass("bungeejumping") });
+	$(".avatar").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e){ $(e.currentTarget).removeClass("bungeejumping"); window.avatar.render();});
 	$(".dialog").hide();
 
 

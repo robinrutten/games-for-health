@@ -37,7 +37,7 @@ var Main = function() {
 		}
 		window.noActionTimeout = setTimeout(function() {
 			noActionFunction();
-		}, 15000);
+		}, 10000);
 	};
 
 	restartTimeout();

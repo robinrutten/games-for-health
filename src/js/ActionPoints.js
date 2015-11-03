@@ -1,5 +1,6 @@
 var ActionPoints = function($elem) {
 	this.$elem = $elem;
+	this.lastAmount = 100;
 	this.amount = 100;
 	this.increaseInterval = 5000;
 	this.change();
@@ -14,7 +15,12 @@ ActionPoints.prototype = {
 	},
 
 	change: function() {
-		$('body').trigger('actionPointsChange', this.amount);
+		var type = 'positive';
+		if(this.amount < this.lastAmount) {
+			type = 'negative';
+		}
+		this.lastAmount = this.amount;
+		$('body').trigger('actionPointsChange', [this.amount, type]);
 		this.render();
 	},
 

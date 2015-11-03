@@ -9,7 +9,13 @@ var Main = function() {
 	/**
 	 * change of action points
 	 */
-	$('body').on('actionPointsChange', function(e, points) { 
+	$('body').on('actionPointsChange', function(e, points, type) { 
+		$('#points-container').removeClass('positive negative');
+		if(type == 'positive') {
+			$('#points-container').addClass('positive');
+		} else {
+			$('#points-container').addClass('negative');
+		}
 		if(points >= 20) {
 			$('#actions').addClass('visible');
 		} else {
@@ -47,6 +53,7 @@ var Main = function() {
 			window.game.increaseHappy(window.avatar);
 			window.avatar.render();
 		}
+		window.actionPoints.decrease(20);
 	});
 
 	//showBubble('img/heart.svg')

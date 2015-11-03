@@ -16,6 +16,16 @@
 </head>
 <body>
 
+<div class="settings">
+	<input type="button" value="Change Gender" id="gender" name="gender" >
+	<input type="button" value="Toggle Glasses" id="glasses" name="glasses" >
+	<div class="settings-body">
+		<input type="range" id="red" name="red" min="0" max="255">
+		<input type="range" id="green" name="blue" min="0" max="255">
+		<input type="range" id="blue" name="blue" min="0" max="255">
+	</div>
+</div>
+
 <!--- character
 - max interactions day
 - choises
@@ -23,15 +33,9 @@
 - earn points to uitgeven in winkel?-->
 <div class="top-bar" id="setup">
 	<ul>
-		<input type="submit" value="Change Gender" id="gender" name="gender" >
-		<input type="submit" value="Toggle Glasses" id="glasses" name="glasses" >
-		<input type="range" id="red" name="red" min="0" max="255">
-		<input type="range" id="green" name="blue" min="0" max="255">
-		<input type="range" id="blue" name="blue" min="0" max="255">
-		<input type="submit" value="Save settings" id="save" name="save" >
 	</ul>
 </div>
-<div class="top-bar" id="status">
+<div class="top-bar">
 	<ul>
 		<li id="hearts">
 			
@@ -59,6 +63,10 @@
 </div>
 <div class="floor">
 </div>
+
+<button class="settings-button">
+	<span class="typcn typcn-spanner"></span>
+</button>
 
 </body>
 </html>

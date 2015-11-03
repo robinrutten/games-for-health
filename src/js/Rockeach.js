@@ -4,11 +4,20 @@ var RockeachValue = function(name) {
 }
 
 var Rockeach = function() {
-	this.values = [];
-	
-	for (var i in Rockeach.names) {
-		this.values.push(new RockeachValue(Rockeach.names[i]))	
+
+	try {
+		this.values = JSON.parse(localStorage.getItem('Rockeach')) || [];
+	} catch (e) {
+		this.values = [];
+		for (var i in Rockeach.names) {
+			this.values.push(new RockeachValue(Rockeach.names[i]))	
+		}
+		this.persist();
 	}
+}
+
+Rockeach.prototype.persist = function() {
+	localStorage.setItem('Rockeach', JSON.stringify(this.values));
 }
 
 Rockeach.prototype.score = function(name) {
@@ -18,6 +27,7 @@ Rockeach.prototype.score = function(name) {
 			this.values[i].value++;
 		}
 	}
+	this.persist();
 } 
 
 Rockeach.names = [

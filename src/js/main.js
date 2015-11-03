@@ -9,7 +9,7 @@ var Main = function() {
 
 		setTimeout(function() {
 			$idea.removeClass('visible');
-		}, 15000);
+		}, 5000);
 	}
 	window.hideBubble = function(image) {
 		var $idea = $('.idea');
@@ -37,7 +37,7 @@ var Main = function() {
 		}
 		window.noActionTimeout = setTimeout(function() {
 			noActionFunction();
-		}, 4000);
+		}, 15000);
 	};
 
 	restartTimeout();

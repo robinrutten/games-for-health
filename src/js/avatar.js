@@ -24,10 +24,15 @@ Avatar.prototype = {
 			this.gender = 'female';
 		}
 
+		this.createSvg();
+	},
+
+	createSvg: function() {
 		if(this.gender === 'female') {
 			this.svg =  this._renderFemale();
+		} else {
+			this.svg = this._renderMale();
 		}
-		this.svg = this._renderMale();
 	},
 
 	renderStatus : function() {
@@ -38,7 +43,7 @@ Avatar.prototype = {
 
 	render: function() {
 		this.renderStatus();
-
+		this.createSvg();
 		return this.svg;
 	},
 

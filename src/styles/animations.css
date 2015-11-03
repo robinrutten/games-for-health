@@ -59,9 +59,13 @@
   85% {
     transform: translateX(-7px);
   }
+  90% {
+    transform: translateX(0px);
+  }
 }
 
 #Layer_1, #Layer_2 {
   animation: jump 5s 1.5s ease-in-out infinite;
+  
 }
 

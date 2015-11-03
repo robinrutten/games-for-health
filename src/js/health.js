@@ -25,7 +25,7 @@ Health.prototype.renderScore = function(selector, score) {
 	$(selector).html(score);
 	$(selector).closest('li').removeClass (function (index, css) {
 	    return (css.match (/(^|\s)score-\S+/g) || []).join(' ');
-	}).addClass(this.getType(score))
+	}).addClass(this.getType(score));
 }
 
 

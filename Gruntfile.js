@@ -7,6 +7,17 @@ module.exports = function(grunt) {
 		dist: 'dist',
 		bower_components: 'bower_components',
 
+	    compress: {
+	      dist: {
+	        options: {
+	          archive: 'exports/export.zip'
+	        },
+	        expand: true,
+	        cwd: '<%= dist %>',
+	        src: ['**/*']
+	      }
+	    },
+
 	    copy: {
 	      dist: {
 	        files: [{
@@ -107,6 +118,8 @@ module.exports = function(grunt) {
         }
 
 	});
+
+	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-usemin');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -115,5 +128,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.registerTask('serve', ['connect:server']);
 	grunt.registerTask('default', []);
-	grunt.registerTask('dist', ['useminPrepare', 'sass', 'copy', 'usemin', 'concat']);
+	grunt.registerTask('dist', ['useminPrepare', 'sass', 'copy', 'usemin', 'concat', 'compress']);
 };
